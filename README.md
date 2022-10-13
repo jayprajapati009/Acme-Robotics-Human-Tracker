@@ -23,4 +23,4 @@ The goal of human detection is to locate every individual in each video image wh
 - The Quad Chart is attachted [here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/blob/main/proposal_documents/QuadChart.pdf).  
 - The UML Activity Diagram is attachted [here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/blob/main/proposal_documents/ENPM808X_ACME_Flowchart.pdf).  
 - The UML Sequence Diagram is attachted [here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/blob/main/proposal_documents/ENPM808X_Proposal_ACME.pdf).  
-- The video for the proposal is attachted [here](/).
+- The video for the proposal is attachted [here](https://drive.google.com/file/d/1kOzdRt9SPMXR_AmSA19PgOaBzf2L9vJt/view?usp=sharing).
