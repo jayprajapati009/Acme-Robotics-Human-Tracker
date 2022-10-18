@@ -1,7 +1,7 @@
 /******************************************************************************
  * MIT License
  * 
- * Copyright (c) 2021 Mayank Joshi, Naitri Rajyaguru
+ * Copyright (c) 2022 Anukriti Singh, Jay Prajapati, Shail Shah
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,10 +24,10 @@
 
 /**
  * @file AutoBot.cpp
- * @author Phase:1 Naitri Rajyaguru(driver) and Mayank Joshi(navigator)
+ * @author Phase:1 Anukriti Singh (Design Keeper), Jay Prajapati(driver) and Shail Shah(navigator)
  * @brief AutoBot class definition for Acme Robotics - Human Tracker
  * @version 0.1
- * @date 2021-10-17
+ * @date 2022-10-17
  * 
  * @copyright Copyright (c) 2021
  * 
