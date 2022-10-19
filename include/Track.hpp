@@ -1,7 +1,7 @@
 /******************************************************************************
  * MIT License
  * 
- * Copyright (c) 2021 Mayank Joshi, Naitri Rajyaguru
+ * Copyright (c) 2022 Anukriti Singh, Jay Prajapati, and Shail Shah
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,9 +23,9 @@
  ******************************************************************************/
 
 /**
- * @file HumanTracker.hpp
- * @author Phase 1 - Mayank Joshi (driver) and Naitri Rajyaguru (navigator)
- * @brief HumanTracker class declaration for Acme Robotics - Human Tracker
+ * @file Tracker.hpp
+ * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and Shail Shah (navigator)
+ * @brief Tracker class declaration for Human Tracking robot
  * @version 0.1
  * 
  * @copyright MIT License
@@ -44,34 +44,33 @@
 
 #include <Detector.hpp>
 
-namespace acme {
-
+namespace robot {
 /**
  * @brief 
  * 
  */
-class HumanTracker {
+class Track {
  public:
  /**
-  * @brief Construct a new Human Tracker object
+  * @brief Object to track humans on basis of confidence 
   * 
   * @param confidence 
   */
-  explicit HumanTracker(double confidence);
+  explicit Track(double confidence);
 
   /**
-   * @brief Destroy the Human Tracker object
+   * @brief Destroy the Track object
    * 
    */
-  ~HumanTracker();
+  ~Track();
 
   /**
-   * @brief Tracks Humans present in a frame
+   * @brief Tracks all humans present in the camera view 
    * 
    * @param frame 
    * @return vector of bbox
    */
-  std::vector<cv::Rect> TrackHumans(const cv::Mat &frame);
+  std::vector<cv::Rectangle> TrackHumans(const cv::Mat &frame);
 
  private:
   /**
@@ -84,17 +83,17 @@ class HumanTracker {
   void InitParams(double confidence);
 
   /**
-   * @brief Filter out the detections using a confidence threshold
+   * @brief Use threshold value to filter the most confident detections
    * 
    * @param unfiltered detections from the Detector
    */
-  void RemoveNoise(const std::vector<acme::Detection>& detections);
+  void Noise(const std::vector<acme::Detection>& detections);
 
  private:
-  double conf_thresh_;
-  std::vector<cv::Rect> humans_;
-  std::unique_ptr<acme::Detector> detector_;
+  double confidence_thresh;
+  std::vector<cv::Rectangle> humans;
+  std::unique_ptr<robot::Detector> detector;
 };
-}  // namespace acme
-#endif  // INCLUDE_HUMANTRACKER_HPP_
+}  // namespace robot
+#endif  
 
