@@ -1,7 +1,7 @@
 /******************************************************************************
  * MIT License
  * 
- * Copyright (c) 2021 Mayank Joshi, Naitri Rajyaguru
+ * Copyright (c) 2022 Anukriti Singh, Jay Prajapati, and Shail Shah
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,8 +24,8 @@
 
 /**
  * @file Utils.hpp
- * @author Phase 1 - Mayank Joshi (driver) and Naitri Rajyaguru (navigator)
- * @brief Utils class declaration for Acme Robotics - Human Tracker
+ * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and Shail Shah (navigator)
+ * @brief Utils class declaration for Human Tracking robot
  * @version 0.1
  * 
  * @copyright MIT License
@@ -42,7 +42,7 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/core.hpp>
 
-namespace acme {
+namespace robot {
 /**
  * @brief Structure to store the pose of an object in (x, y, z)
  * 
@@ -134,6 +134,6 @@ class Utils{
      */
     static Pose PixelsToPose(const cv::Rect &b, double calib_factor);
 };
-}  // namespace acme
+}  // namespace robot
 #endif  // INCLUDE_UTILS_HPP_
 
