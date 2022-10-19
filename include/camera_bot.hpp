@@ -40,20 +40,16 @@
 #include <vector>
 #include <memory>
 
-#include <HumanTracker.hpp>
+#include <Track.hpp>
 
-namespace acme {
+namespace robot {
      /**
       * @brief Different modes to run the program
       *
       */
   enum Mode {
        /// Run the Full Human Detector and Tracker module
-      kRealTime = 0,
-      /// Collect Training Data
-      kTraining,
-      /// Run Detector on user specified test data and generate metrics
-      kTesting
+      kRealTime = 0
   };
 
 /**
@@ -63,26 +59,26 @@ namespace acme {
  * Output the human location in the Robot reference frame
  * 
  */
-class AutoBot {
+class CamBot {
  public:
      /**
-      * @brief Construct a new Auto Bot object
+      * @brief Construct a new Cam Bot object
       * 
-      * initializes default parameters used by AutoBot class
+      * initializes default parameters used by CamBot class
       * 
       * @param camera_id 
       * @param calib_factor 
       */
-      explicit AutoBot(const int camera_id = 0, double calib_factor = -1);
+      explicit CamBot(const int camera_id = 0, double calib_factor = -1);
 
       /**
-       * @brief Destroy the Auto Bot object
+       * @brief Destroy the Cam Bot object
        * 
        */
       ~AutoBot();
 
      /**
-      * @brief Main function of AutoBot class to start the program
+      * @brief Main function of CamBot class to start the program
       * 
       * Based on the mode selected, program behavior changes
       * Can run Human-Detector and Tracker
@@ -164,28 +160,6 @@ class AutoBot {
 
  private:
       /**
-       * @brief When Mode is kTraining, Run Method will call CollectTrainData
-       * 
-       * Asks the user to input the output directory
-       * Asks the user how many images to save
-       * ASks the user for frame interval
-       * 
-       */
-      void CollectTrainData();
-
-      /**
-       * @brief When Mode is kTesting, Run Method will call DetectTestData
-       * 
-       * Asks the user to input the test data directory
-       * Test Data should be in yolo format
-       * Run Detector on images
-       * Calculate avg iou by comparing with ground truth
-       * Display the metric output
-       * 
-       */
-      void DetectTestData();
-
-      /**
        * @brief When mode is kRealTime, Run Method will call RunRealTime
        * 
        * perform calibration if not calib_factor not set
@@ -259,6 +233,6 @@ class AutoBot {
   bool show_window_;
   int test_counter_;
 };
-}  // namespace acme
+}  // namespace robot
 
-#endif  // INCLUDE_AUTOBOT_HPP_
+#endif  
