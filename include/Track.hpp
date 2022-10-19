@@ -83,7 +83,7 @@ class Track {
   void InitParams(double confidence);
 
   /**
-   * @brief Use threshold value to filter the most confident detections
+   * @brief Use confidence threshold value to filter the most confident detections
    * 
    * @param unfiltered detections from the Detector
    */
