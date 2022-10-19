@@ -1,7 +1,7 @@
 /******************************************************************************
  * MIT License
  * 
- * Copyright (c) 2021 Mayank Joshi, Naitri Rajyaguru
+ * Copyright (c) 2022 Anukriti Singh, Jay Prajapati, and Shail Shah
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,8 +24,8 @@
 
 /**
  * @file Detector.hpp
- * @author Phase 1 - Mayank Joshi (driver) and Naitri Rajyaguru (navigator)
- * @brief Detector class declaration for Acme Robotics - Human Tracker
+ * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and Shail Shah (navigator)
+ * @brief Detector class declaration for for Human Tracking robot
  * @version 0.1
  * 
  * @copyright MIT License
@@ -47,7 +47,7 @@
 #include <Utils.hpp>
 
 
-namespace acme {
+namespace robot {
 /**
  * @brief Structure to store detector output
  *  
@@ -210,5 +210,5 @@ class Detector {
         std::vector<std::string> out_names_;
         std::vector<cv::Mat> outputs_;
 };
-}  // namespace acme
-#endif  // INCLUDE_DETECTOR_HPP_
+}  // namespace robot
+#endif  
