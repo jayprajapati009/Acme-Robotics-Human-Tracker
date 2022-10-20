@@ -26,7 +26,7 @@
  * @file main.cpp
  * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and
  *                   Shail Shah (navigator)
- * @brief main file for Acem Robotic Human Tracker
+ * @brief main file for Acme Robotic Human Tracker
  * @version 0.1
  *
  * @copyright MIT License

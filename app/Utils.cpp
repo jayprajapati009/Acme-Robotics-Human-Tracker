@@ -26,7 +26,7 @@
  * @file Utils.cpp
  * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and
  *                   Shail Shah (navigator)
- * @brief utils class declaration for Acme Robotics - Human Tracker
+ * @brief utils class defination for Acme Robotics - Human Tracker
  * @version 0.1
  *
  * @copyright MIT License
