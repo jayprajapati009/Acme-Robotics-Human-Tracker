@@ -45,7 +45,7 @@ Will be updated soon
 
 ###  Issues/Bugs
 
-So far not issues/bugs detected.
+- Valgrind Errors: uninitialised Value and Memory Leak Errors, we suspect that those are in the opencv library, we will try to solve them in the phase-2 release.
 
 ### Build Instrutions
 
