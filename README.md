@@ -33,6 +33,7 @@ The goal of human detection is to locate every individual in each video image wh
 
 - As Agile Iterative Process (AIP) is used for the project, the AIP sheet is attached [here](https://docs.google.com/spreadsheets/d/166YucrRE8L5IEZP3Tnl1fXNnf7gSWNF5CJ9GKwdEBdU/edit?usp=sharing)
 - The scrum meeting list and  is attached [here](https://docs.google.com/spreadsheets/d/166YucrRE8L5IEZP3Tnl1fXNnf7gSWNF5CJ9GKwdEBdU/edit?usp=sharing)
+- The video for phase-1 submission can be found [here]()
 
 ### Demo
 
