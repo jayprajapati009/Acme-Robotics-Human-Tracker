@@ -31,3 +31,14 @@ add_subdirectory(app)
 add_subdirectory(test)
 add_subdirectory(vendor/googletest/googletest)
 
+find_package(Doxygen)
+if (DOXYGEN_FOUND)
+    set(DOXYGEN_EXECUTABLE "doxygen")
+    set(DOXYGEN_CONF "${CMAKE_SOURCE_DIR}/Doxyfile")
+    add_custom_target( doc
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_CONF}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        COMMENT "Generating API documentation with Doxygen"
+else (DOXYGEN_FOUND)
+  message("Doxygen need to be installed to generate the doxygen documentation")
+endif (DOXYGEN_FOUND)
