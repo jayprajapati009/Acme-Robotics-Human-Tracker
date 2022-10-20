@@ -40,30 +40,23 @@ acme_robots::Detector::Detector(double conf, const std::vector<std::string> &cla
     /// Initializes default parameter and creates the model
     InitModel(conf, classes);
 
-    /// Run the model once before actually performing detection on video frame
+    /// Warmup cycle before actually performing detection on video frame
     WarmUp();
 }
 acme_robots::Detector::~Detector() {}
 
 std::vector<acme_robots::Detection> acme_robots::Detector::Detect(const cv::Mat& frame) {
-    /// create a vector to store Detection objects
+    /// Defining a vector to store Detection objects
     std::vector<acme_robots::Detection> detections = {};
 
-    /// create a Mat to store the input blob
+    /// Defining a matrix to store the input blob
     cv::Mat b;
     if ( !frame.empty() ) {
-        /// create a blob for the model to run a forward pass
         b = cv::dnn::blobFromImage(frame, scale_, size_, mean_, swap_, crop_);
-
-        /// set input for the model
         network_.setInput(b);
         outputs_.clear();
-
-        /// run a forward pass
         network_.forward(outputs_, out_names_);
         cv::Size img_size = frame.size();
-
-        /// process the outputs of the model forward pass
         detections = ProcessNet(img_size);
     }
     return detections;
@@ -114,46 +107,32 @@ void acme_robots::Detector::NumChannels(const int num_channels) {
 }
 
 void acme_robots::Detector::InitModel(double conf, const std::vector<std::string> &c) {
-    /// set confidence threshold
     conf_thresh_ = conf;
 
-    /// set classes to detect by the Detector class object
     classes_ = c;
 
-    /// set nms threshold default value
     nms_thresh_ = 0.4;
 
-    /// set input width default value
     input_width_ = 416;
 
-    /// set input height default value
     input_height_ = 416;
 
-    /// set input img size
     size_ = cv::Size(input_width_, input_height_);
 
-    /// set scale factor default value
     scale_ = 0.00392157;
 
-    /// set mean to subtract default value
     mean_ = cv::Scalar();
 
-    /// set swap red and blue channels default value
     swap_ = true;
 
-    /// set random crop img default value
     crop_ = false;
 
-    /// set backend default value for the model
     backend_ = 0;
 
-    /// set target default value for the model
     target_ = 0;
 
-    /// set num of channels default value for the model
     num_channels_ = 3;
 
-    /// set classes default value for the model
     all_classes_ = {"person", "bicycle", "car", "motorbike", "aeroplane",
      "bus", "train", "truck", "boat", "traffic light", "fire hydrant",
       "stop sign", "parking meter", "bench", "bird", "cat", "dog", "horse",
@@ -168,30 +147,26 @@ void acme_robots::Detector::InitModel(double conf, const std::vector<std::string
       "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase",
       "scissors", "teddy bear", "hair drier", "toothbrush" };
 
-    /// set weights file path
+    /// Setting file path of weights
     std::string weights_path = "..//data//yolov4-tiny.weights";
 
-    /// set config file path
+    /// Setting file path of config
     std::string config_path = "..//data//yolov4-tiny.cfg";
 
-    /// create a model network
+    /// Creating model
     network_ = cv::dnn::readNet(weights_path, config_path);
 
-    /// set network backend using the set backend value
     network_.setPreferableBackend(backend_);
 
-    /// set network target using the set target value
     network_.setPreferableTarget(target_);
 
-    /// get output layer names for the model
     out_names_ = network_.getUnconnectedOutLayersNames();
 }
 
 void acme_robots::Detector::WarmUp() {
-    /// create a temporary Mat object
+    /// create a temporary object
     cv::Mat temp = cv::Mat::zeros(cv::Size(416, 416), CV_8UC3);
 
-    /// run Detector on the temporary Mat as a warmup
     Detect(temp);
 }
 
