@@ -23,9 +23,9 @@
  ******************************************************************************/
 
 /**
- * @file cam_bot.hpp
- * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and Shail Shah (navigator)
- * @brief cam_bot class declaration for Acme Robotics - Human Tracker
+ * @file detect.hpp
+ * @author Phase 1 - Anukriti Singh (Design keeper), Jay Prajapati (Driver), and Shail Shah (Navigator)
+ * @brief Detection module for Acme Robotics - Human Tracker
  * @version 0.1
  * 
  * @copyright MIT License
@@ -97,5 +97,5 @@ class Detector {
         std::vector<std::string> out_names_;
         std::vector<cv::Mat> outputs_;
 };
-}  // namespace acme
+}  // namespace acme_robots
 #endif  // INCLUDE_DETECT_HPP_
