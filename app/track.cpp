@@ -26,7 +26,7 @@
  * @file track.cpp
  * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and
  *                   Shail Shah (navigator)
- * @brief track class declaration for Acme Robotics - Human Tracker
+ * @brief track class defination for Acme Robotics - Human Tracker
  * @version 0.1
  *
  * @copyright MIT License
@@ -50,7 +50,7 @@ void acme_robots::Track::InitParams(double confidence) {
   humans_.clear();
 }
 
-std::vector<cv::Rect> acme_robots::Track::TrackHumans const cv::Mat &frame) {
+std::vector<cv::Rect> acme_robots::Track::TrackHumans(const cv::Mat &frame) {
   humans_.clear();
 
   std::vector<acme_robots::Detection> output = detector_->Detect(frame);

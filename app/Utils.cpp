@@ -78,14 +78,14 @@ cv::Mat acme_robots::Utils::ResizeImage(const cv::Mat &i, const cv::Size &s) {
   return out_img;
 }
 
-acme_robots::Pose acme_robots::Utils::PixelsToPose(const cv::Rect &b,
-                                                   double calib_factor) {
-  /// height of object in pixels
-  double height = b.height;
-  /// calibrated distance using focal length and calib factor
-  double calib_distance = calib_factor / height;
-  /// get centre of bbox
-  cv::Point centre = acme_robots::Utils::GetBboxCenter(b);
+// acme_robots::Pose acme_robots::Utils::PixelsToPose(const cv::Rect &b,
+//                                                    double calib_factor) {
+//   /// height of object in pixels
+//   double height = b.height;
+//   /// calibrated distance using focal length and calib factor
+//   double calib_distance = calib_factor / height;
+//   /// get centre of bbox
+//   cv::Point centre = acme_robots::Utils::GetBboxCenter(b);
 
-  return acme_robots::Pose(calib_distance, centre.x, centre.y);
-}
+//   return acme_robots::Pose(calib_distance, centre.x, centre.y);
+// }

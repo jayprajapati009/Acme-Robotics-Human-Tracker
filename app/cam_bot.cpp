@@ -221,7 +221,7 @@ void acme_robots::cam_bot::InitParams(int camera_id, double calib_factor) {
   focal_length_ = 0.036;
   avg_human_height_ = 1.7;
   p_size_ = cv::Size(640, 480);
-  double confidence_threshold = 0.6;
+  // double confidence_threshold = 0.6;
   show_window_ = true;
   test_counter_ = -1;
   auto path = camera_id_;
