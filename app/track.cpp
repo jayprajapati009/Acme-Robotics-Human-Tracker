@@ -26,7 +26,7 @@
  * @file track.cpp
  * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and
  *                   Shail Shah (navigator)
- * @brief track class declaration for Acme Robotics - Human Tracker
+ * @brief track class defination for Acme Robotics - Human Tracker
  * @version 0.1
  *
  * @copyright MIT License
