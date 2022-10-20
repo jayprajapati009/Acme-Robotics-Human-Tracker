@@ -8,6 +8,9 @@
 #
 ##############################################################################
 
+require 'coveralls'
+Coveralls.wear!
+
 name: Build
 
 on:
@@ -57,3 +60,5 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: ${{github.workspace}}/build/coverage.info.cleaned
+          
+gem 'coveralls', require: false
