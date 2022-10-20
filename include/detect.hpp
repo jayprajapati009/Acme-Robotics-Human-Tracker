@@ -55,7 +55,7 @@ struct Detection {
   std::string name;
 };
 class Detector {
-public:
+ public:
   Detector(double conf, const std::vector<std::string> &classes);
   ~Detector();
   std::vector<acme_robots::Detection> Detect(const cv::Mat &frame);
@@ -72,12 +72,12 @@ public:
   void Target(const int target);
   void NumChannels(const int num_channels);
 
-private:
+ private:
   void WarmUp();
   void InitModel(double conf, const std::vector<std::string> &c);
   std::vector<acme_robots::Detection> ProcessNet(const cv::Size &s);
 
-private:
+ private:
   double conf_thresh_;
   std::vector<std::string> classes_;
   std::vector<std::string> all_classes_;
@@ -96,5 +96,5 @@ private:
   std::vector<std::string> out_names_;
   std::vector<cv::Mat> outputs_;
 };
-} // namespace acme_robots
-#endif // INCLUDE_DETECT_HPP_
+}  // namespace acme_robots
+#endif  // INCLUDE_DETECT_HPP_

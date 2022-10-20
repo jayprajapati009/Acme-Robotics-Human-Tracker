@@ -47,7 +47,6 @@
 namespace acme_robots {
 
 struct Pose {
-
   Pose() {
     x = -1.0;
     y = -1.0;
@@ -65,7 +64,7 @@ struct Pose {
 };
 
 class Utils {
-public:
+ public:
   static cv::Mat DrawBbox(cv::Mat i, const cv::Rect &b, const std::string &l);
   static cv::Point GetBboxCenter(const cv::Rect &bbox);
   static double GetBboxArea(const cv::Rect &bbox);
@@ -73,6 +72,6 @@ public:
   static double CalculateIOU(const cv::Rect &b1, const cv::Rect &b2);
   static Pose PixelsToPose(const cv::Rect &b, double calib_factor);
 };
-} // namespace acme_robots
+}  // namespace acme_robots
 
-#endif // INCLUDE_UTILS_HPP_
+#endif  // INCLUDE_UTILS_HPP_

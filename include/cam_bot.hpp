@@ -48,7 +48,7 @@ namespace acme_robots {
       RealTime = 0,
       /// Acquiring data for training
       Training,
-      /// Testing detector module with user provided test 
+      /// Testing detector module with user provided test
       /// data and output metrics
       Testing
   };

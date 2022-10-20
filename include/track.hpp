@@ -49,20 +49,20 @@
 namespace acme_robots {
 
 class Track {
-public:
+ public:
   explicit Track(double confidence);
   ~Track();
   std::vector<cv::Rect> TrackHumans(const cv::Mat &frame);
 
-private:
+ private:
   void InitParams(double confidence);
   void RemoveNoise(const std::vector<acme_robots::Detection> &detections);
 
-private:
+ private:
   double confidence_thresh_;
   std::vector<cv::Rect> humans_;
   std::unique_ptr<acme_robots::Detector> detector_;
 };
-} // namespace acme_robots
+}  // namespace acme_robots
 
-#endif // INCLUDE_TRACK_HPP_
+#endif  // INCLUDE_TRACK_HPP_

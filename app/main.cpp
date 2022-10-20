@@ -33,7 +33,7 @@
  *
  */
 
-#include "cam_bot.hpp"
+#include "../include/cam_bot.hpp"
 
 int main() {
   /// define the operation mode

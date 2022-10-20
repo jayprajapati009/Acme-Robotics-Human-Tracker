@@ -50,7 +50,7 @@ void acme_robots::Track::InitParams(double confidence) {
   humans_.clear();
 }
 
-std::vector<cv::Rect> acme_robots::Track::TrackHumans const cv::Mat &frame) {
+std::vector<cv::Rect> acme_robots::Track::TrackHumans(const cv::Mat &frame) {
   humans_.clear();
 
   std::vector<acme_robots::Detection> output = detector_->Detect(frame);
