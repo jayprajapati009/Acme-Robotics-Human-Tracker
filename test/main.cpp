@@ -1,7 +1,7 @@
 /******************************************************************************
  * MIT License
  * 
- * Copyright (c) 2021 Mayank Joshi, Naitri Rajyaguru
+ * Copyright (c) 2022 Anukriti Singh, Jay Prajapati, and Shail Shah
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,12 +24,12 @@
 
 /**
  * @file main.cpp
- * @author Mayank Joshi (driver) and Naitri Rajyaguru (navigator)
+ * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and
+ *                   Shail Shah (navigator)
  * @brief main function to test Acme Robotics - Human Tracker
  * @version 0.1
- * @date 2021-10-05
  * 
- * @copyright Copyright (c) 2021
+ * @copyright Copyright (c) 2022
  * 
  */
 
