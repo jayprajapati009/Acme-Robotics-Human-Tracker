@@ -24,7 +24,7 @@
 
 /**
  * @file cam_bot.hpp
- * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and Shail Shah (navigator)
+ * @author Phase 1 - Anukriti Singh (Design keeper), Jay Prajapati (Driver), and Shail Shah (Navigator)
  * @brief cam_bot class declaration for Acme Robotics - Human Tracker
  * @version 0.1
  * 
@@ -43,21 +43,39 @@
 #include <track.hpp>
 
 namespace acme_robots {
-     
   enum Mode {
-       /// Run the Full Human Detector and Tracker module
+       /// Complete detection & tracker module
       RealTime = 0,
-      /// Collect Training Data
+      /// Acquiring data for training
       Training,
-      /// Run Detector on user specified test data and generate metrics
+      /// Testing detector module with user provided test 
+      /// data and output metrics
       Testing
   };
+/**
+ * @brief Acme Robotics - Human Tracker
+ * 
+ * Mode selection is at user's disposal to select as required
+ * Display human's coordinates with respect to Robot reference frame
+ * 
+ */
 class cam_bot {
  public:
+     /**
+      * @brief Construct a new cam_bot object
+      * 
+      * Initializes default parameters used by cam_bot class
+      * 
+      * @param camera_id 
+      * @param calibration_factor 
+      */
       explicit cam_bot(const int camera_id = 0, double calibration_factor = -1);
-
+      /**
+       * @brief Deconstruct the cam_bot object
+       * 
+       */
       ~cam_bot();
-
+     /// Initializing essential funtions based on selected mode of operation
       void Run(const acme_robots::Mode mode);
       void FocalLength(double focal_length);
       void ProcessingSize(const int width, const int height);

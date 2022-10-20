@@ -23,9 +23,9 @@
  ******************************************************************************/
 
 /**
- * @file cam_bot.hpp
- * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and Shail Shah (navigator)
- * @brief cam_bot class declaration for Acme Robotics - Human Tracker
+ * @file detect.cpp
+ * @author Phase 1 - Anukriti Singh (Design keeper), Jay Prajapati (Driver), and Shail Shah (Navigator)
+ * @brief Detection module for Acme Robotics - Human Tracker
  * @version 0.1
  * 
  * @copyright MIT License
@@ -37,10 +37,10 @@
 
 
 acme_robots::Detector::Detector(double conf, const std::vector<std::string> &classes) {
-    /// initializes default parameter and creates the model network
+    /// Initializes default parameter and creates the model
     InitModel(conf, classes);
 
-    /// run the model once before actually performing detection on video frame
+    /// Run the model once before actually performing detection on video frame
     WarmUp();
 }
 acme_robots::Detector::~Detector() {}
