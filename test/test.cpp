@@ -1,7 +1,7 @@
 /******************************************************************************
  * MIT License
  * 
- * Copyright (c) 2021 Mayank Joshi, Naitri Rajyaguru
+ * Copyright (c) 2022 Anukriti Singh, Jay Prajapati, and Shail Shah
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,8 @@
 
 /**
  * @file test.cpp
- * @author Phase 1 - Mayank Joshi (driver) and Naitri Rajyaguru (navigator)
+ * @author Phase 1 - Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and
+ *                   Shail Shah (navigator)
  * @brief Unit Tests for Acme Robotics - Human Tracker
  * @version 0.1
  * 
@@ -61,14 +62,6 @@ TEST(cam_bot, Run) {
     mode = acme_robots::Mode::Training;
     ASSERT_NO_THROW(robot_object.Run(mode));
 }
-// TEST(AutoBot, SetRobotPose) {
-//     acme::Pose p;
-//     ASSERT_NO_THROW(robot_object.SetRobotPose(p));
-// }
-// TEST(AutoBot, SetCameraPose) {
-//     acme::Pose p;
-//     ASSERT_NO_THROW(robot_object.SetCameraPose(p));
-// }
 TEST(cam_bot, FocalLength) {
     double fl = 0.036;
     ASSERT_NO_THROW(robot_object.FocalLength(fl));
@@ -80,9 +73,6 @@ TEST(cam_bot, ProcessingSize) {
     ASSERT_NO_THROW(robot_object.ProcessingSize(w, h));
     ASSERT_NO_THROW(robot_object.ProcessingSize(s));
 }
-// TEST(cam_bot, GetObjects) {
-//     ASSERT_NEAR(10, static_cast<int>(robot_object.GetObjects().size()), 20);
-// }
 TEST(cam_bot, HumanHeight) {
     double height = 1.6;
     ASSERT_NO_THROW(robot_object.HumanHeight(height));
@@ -171,17 +161,3 @@ TEST(Utils, ResizeImage) {
     ASSERT_EQ(static_cast<int>(output.cols), 20);
     ASSERT_EQ(static_cast<int>(output.rows), 20);
 }
-// TEST(Utils, CalculateIOU) {
-//     cv::Rect r1 = cv::Rect(0, 0, 10, 10);
-//     cv::Rect r2 = cv::Rect(5, 5, 10, 10);
-//     auto output = utils_object.CalculateIOU(r1, r2);
-//     ASSERT_NEAR(output, 0.166, 1);
-// }
-// TEST(Utils, PixelsToPose) {
-//     cv::Rect r = cv::Rect(0, 0, 10, 10);
-//     double calib_factor = 0.2;
-//     auto output = utils_object.PixelsToPose(r, calib_factor);
-//     ASSERT_NEAR(output.x, 0.02, 0.1);
-//     ASSERT_NEAR(output.y, 5.0, 0.1);
-//     ASSERT_NEAR(output.z, 5.0, 0.1);
-// }
