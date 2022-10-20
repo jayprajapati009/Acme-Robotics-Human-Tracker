@@ -23,9 +23,9 @@
  ******************************************************************************/
 
 /**
- * @file cam_bot.hpp
+ * @file main.cpp
  * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and Shail Shah (navigator)
- * @brief cam_bot class declaration for Acme Robotics - Human Tracker
+ * @brief main file for Acem Robotic Human Tracker
  * @version 0.1
  * 
  * @copyright MIT License
@@ -34,19 +34,18 @@
 
 
 
-#include <cam_bot.hpp>
+#include "cam_bot.hpp"
 
 int main() {
-    /// define on which mode the module has to operate
+    /// define the operation mode
     acme_robots::Mode mode = acme_robots::Mode::RealTime;
 
-    /// initialize AutoBot class object with camera id and calib factor
+    /// Initializing cam_bot
     acme_robots::cam_bot HumanTracking(0, 0.5);
 
-    /// call Run method with the selected mode of operation
+    /// Calling run methof
     HumanTracking.Run(mode);
 
-    /// print a success message if module exited without any error
     std::cout << "Successfully Created Acme cam_bot" << std::endl;
     return 0;
 }
