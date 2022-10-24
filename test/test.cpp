@@ -62,17 +62,8 @@ TEST(cam_bot, Run) {
     mode = acme_robots::Mode::Training;
     ASSERT_NO_THROW(robot_object.Run(mode));
 }
-TEST(cam_bot, FocalLength) {
-    double fl = 0.036;
-    ASSERT_NO_THROW(robot_object.FocalLength(fl));
-}
-TEST(cam_bot, ProcessingSize) {
-    int w = 416;
-    int h = 416;
-    cv::Size s(w, h);
-    ASSERT_NO_THROW(robot_object.ProcessingSize(w, h));
-    ASSERT_NO_THROW(robot_object.ProcessingSize(s));
-}
+
+
 TEST(cam_bot, HumanHeight) {
     double height = 1.6;
     ASSERT_NO_THROW(robot_object.HumanHeight(height));
@@ -83,7 +74,17 @@ TEST(track, TrackHumans) {
     auto output = tracker_object.TrackHumans(img);
     ASSERT_EQ(static_cast<int>(output.size()), 1);
 }
+TEST(Detection, structure) {
+    std::string class_name = "person";
+    acme_robots::Detection temp_object(cv::Rect(1, 1, 1, 1), 0.4, class_name);
 
+    ASSERT_EQ(static_cast<int>(temp_object.bbox.x), 1);
+    ASSERT_EQ(static_cast<int>(temp_object.bbox.y), 1);
+    ASSERT_EQ(static_cast<int>(temp_object.bbox.width), 1);
+    ASSERT_EQ(static_cast<int>(temp_object.bbox.height), 1);
+    ASSERT_EQ(temp_object.confidence, 0.4);
+    ASSERT_EQ(temp_object.name, class_name);
+}
 TEST(Detector, Detect) {
     cv::Mat img = cv::imread("..//data//test.png");
     auto output = detect_object.Detect(img);
