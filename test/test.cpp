@@ -83,17 +83,7 @@ TEST(track, TrackHumans) {
     auto output = tracker_object.TrackHumans(img);
     ASSERT_EQ(static_cast<int>(output.size()), 1);
 }
-TEST(Detection, structure) {
-    std::string class_name = "person";
-    acme_robots::Detection temp_object(cv::Rect(1, 1, 1, 1), 0.4, class_name);
 
-    ASSERT_EQ(static_cast<int>(temp_object.bbox.x), 1);
-    ASSERT_EQ(static_cast<int>(temp_object.bbox.y), 1);
-    ASSERT_EQ(static_cast<int>(temp_object.bbox.width), 1);
-    ASSERT_EQ(static_cast<int>(temp_object.bbox.height), 1);
-    ASSERT_EQ(temp_object.confidence, 0.4);
-    ASSERT_EQ(temp_object.name, class_name);
-}
 TEST(Detector, Detect) {
     cv::Mat img = cv::imread("..//data//test.png");
     auto output = detect_object.Detect(img);
