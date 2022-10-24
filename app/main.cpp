@@ -23,7 +23,7 @@
  ******************************************************************************/
 
 /**
- * @file cam_bot.hpp
+ * @file main.cpp
  * @author Phase 1 - Anukriti Singh (design keeper), Jay Prajapati (driver), and
  *                   Shail Shah (navigator)
  * @brief main.cpp file for Acme Robotics - Human Tracker
