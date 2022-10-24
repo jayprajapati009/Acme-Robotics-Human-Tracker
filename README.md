@@ -102,6 +102,6 @@ The results are stored in /results/cpplint/ and /results/cppcheck/ directories.
 
 [3] https://www.youtube.com/watch?v=2FYm3GOonhk
 
-[4] https://github.com/mjoshi07/Human-Tracker-Bot
+[4] https://github.com/matlab-deep-learning/Object-Detection-Using-Pretrained-YOLO-v2/blob/main/+helper/coco-classes.txt
 
 [5] https://www.youtube.com/watch?v=BCJYorKIlN8
