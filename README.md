@@ -3,7 +3,7 @@
 
 [![Build Status](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/actions/workflows/build_and_coveralls.yml/badge.svg)](https://github.com/ayprajapati009/Acme-Robotics-Human-Tracker/actions/workflows/build_and_coveralls.yml)
 [![Coverage Status](https://coveralls.io/repos/github/jayprajapati009/Acme-Robotics-Human-Tracker/badge.svg?branch=main)](https://coveralls.io/github/jayprajapati009/Acme-Robotics-Human-Tracker?branch=main)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Authors
 
