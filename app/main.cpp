@@ -118,26 +118,20 @@ Mat post_process(Mat input_image, vector<Mat> &outputs, const vector<string> &cl
 
     // Perform Non Maximum Suppression and draw predictions.
     vector<int> indices;
-    NMSBoxes(boxes, confidences, SCORE_THRESHOLD, NMS_THRESHOLD, indices);
-    for (int i = 0; i < indices.size(); i++) 
-    {
-        int idx = indices[i];
-        Rect box = boxes[idx];
+    cv::dnn::NMSBoxes(bboxes, confidences, conf_thresh_, nms_thresh_, indices);
 
-        int left = box.x;
-        int top = box.y;
-        int width = box.width;
-        int height = box.height;
-        // Draw bounding box.
-        rectangle(input_image, Point(left, top), Point(left + width, top + height), BLUE, 3*THICKNESS);
+    for ( int index : indices ) {
+        cv::Rect bbox = bboxes[index];
+        double conf = static_cast<double>(confidences[index]);
+        std::string name = class_names[index];
 
-        // Get the label for the class name and its confidence.
-        string label = format("%.2f", confidences[idx]);
-        label = class_name[class_ids[idx]] + ":" + label;
-        // Draw class labels.
-        draw_label(input_image, label, left, top);
+        /// create Detection object
+        Detection box(bbox, conf, name);
+
+        /// store the Detection objects in a vector
+        detections.push_back(box);
     }
-    return input_image;
+    return detections;
 }
 
 
