@@ -23,17 +23,12 @@
  ******************************************************************************/
 
 /**
- * @file main.cpp
+ * @file pre_process.hpp
  * @author Jay Prajapati (jayp@umd.edu)
  * @author Shail Shah (sshah115@umd.edu)
  * @author Anukriti Singh (anukriti@umd.edu)
  *
- * @brief Designing and developing 'Perception module' for Acme Robotics
- *        The main.cpp file covers following tasks of project:
- *        1) Human obstacle detection (N>1)
- *        2) Tracks humans with unique IDs
- *        3) Assigns label with co-ordinates of Human's position
- *        4) Works on single monocular video camera
+ * @brief Preprocess class declaration and definition file
  * @version 2.0
  * @date 2022-10-27
  *
@@ -41,50 +36,46 @@
  *
  */
 
-#include <fstream>
-#include <opencv2/opencv.hpp>
+#ifndef _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_PRE_PROCESS_HPP_
+#define _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_PRE_PROCESS_HPP_
 
-#include "./../include/draw_label.hpp"
-#include "./../include/post_process.hpp"
-#include "./../include/pre_process.hpp"
+#include <opencv2/opencv.hpp>
+#include <vector>
 
 /**
- * @brief 1) Loads object detection class list
- *        2) Loads frames from video stream of monocular camera
- *        3) Loads network for detection result
- *        4) Pre- & Post-processes the acquired detections
- *        5) Displays result in output window
+ * @brief Preprocess class defines the outline for preprocessing input frame
+ * based on provided network model i.e yolov5s
  *
- * @return int
  */
-int main() {
-  std::vector<std::string> class_list;
-  std::ifstream ifs("../app/resources/coco.names");
-  std::string line;
+class Preprocess {
+public:
+  const float INPUT_WIDTH = 640.0;
+  const float INPUT_HEIGHT = 640.0;
 
-  while (getline(ifs, line)) {
-    class_list.push_back(line);
+  /**
+   * @brief The acquired video frame is provided as input to yolov5s model and
+   *        detections are extracted for post-processing.
+   *
+   * @param input_frame This function uses input_frame as input to pre-process
+   * and output detections
+   * @param net This param provides yolov5s model for processing of the input
+   * frame
+   * @return std::vector<cv::Mat> returns the detections as outputs to the main
+   * function
+   */
+  std::vector<cv::Mat> pre_process(cv::Mat input_frame, cv::dnn::Net net) {
+    cv::Mat blob;
+    cv::dnn::blobFromImage(input_frame, blob, 1. / 255.,
+                           cv::Size(INPUT_WIDTH, INPUT_HEIGHT), cv::Scalar(),
+                           true, false);
+
+    net.setInput(blob);
+
+    std::vector<cv::Mat> preprocess_outputs;
+    net.forward(preprocess_outputs, net.getUnconnectedOutLayersNames());
+
+    return preprocess_outputs;
   }
+};
 
-  cv::VideoCapture cap(0);
-  cv::Mat video_frame;
-
-  while (true) {
-    cap.read(video_frame);
-
-    cv::dnn::Net net;
-    net = cv::dnn::readNet("./../app/resources/models/yolov5s.onnx");
-
-    std::vector<cv::Mat> detections;
-    Preprocess objp;
-    detections = objp.pre_process(video_frame, net);
-
-    Postprocess objpp;
-    cv::Mat img =
-        objpp.post_process(video_frame.clone(), detections, class_list);
-
-    cv::imshow("Output", img);
-    cv::waitKey(1);
-  }
-  return 0;
-}
+#endif // _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_PRE_PROCESS_HPP_
