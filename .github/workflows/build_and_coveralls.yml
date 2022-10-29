@@ -33,11 +33,11 @@ jobs:
       # We want to use GitHub CI checkout version 3 for checking out the branch
       - uses: actions/checkout@v3
 
-      # Install requirements
-      # - name: install requirements 
-      #   run: |
-      #       sudo chmod +x requirements.sh
-      #       ./requirements.sh
+      Install requirements
+      - name: install requirements 
+        run: |
+            sudo chmod +x requirements.sh
+            ./requirements.sh
 
       # Install OpenCV
       - name: install opencv 
