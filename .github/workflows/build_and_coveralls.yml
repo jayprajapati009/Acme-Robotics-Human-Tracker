@@ -34,10 +34,10 @@ jobs:
       - uses: actions/checkout@v3
 
       # Install requirements
-      - name: install requirements 
-        run: |
-            sudo chmod +x requirements.sh
-            ./requirements.sh
+      # - name: install requirements 
+      #   run: |
+      #       sudo chmod +x requirements.sh
+      #       ./requirements.sh
 
       # Install OpenCV
       - name: install opencv 
