@@ -28,7 +28,7 @@
  * @author Shail Shah (sshah115@umd.edu)
  * @author Anukriti Singh (anukriti@umd.edu)
  *
- * @brief Test cases declaration and defination file
+ * @brief Test cases declaration and definition file
  * @version 2.0
  * @date 2022-10-27
  *
