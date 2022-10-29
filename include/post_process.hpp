@@ -38,14 +38,15 @@
  *
  */
 
-#ifndef _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_POST_PROCESS_HPP_
-#define _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_POST_PROCESS_HPP_
+#ifndef INCLUDE_POST_PROCESS_HPP_
+#define INCLUDE_POST_PROCESS_HPP_
 
 #include <iostream>
-#include <opencv2/opencv.hpp>
 #include <ostream>
 #include <string>
 #include <vector>
+
+#include <opencv2/opencv.hpp>
 
 #include "./../include/draw_label.hpp"
 #include "./../include/pre_process.hpp"
@@ -56,14 +57,14 @@
  *
  */
 class Postprocess : public Preprocess, public Draw_Label {
-private:
+ private:
   const float SCORE_THRESHOLD = 0.5;
   const float NMS_THRESHOLD = 0.45;
   const float CONFIDENCE_THRESHOLD = 0.45;
   cv::Scalar BLUE = cv::Scalar(255, 178, 50);
   cv::Scalar RED = cv::Scalar(0, 0, 255);
 
-public:
+ public:
   /**
    * @brief The acquired video frame, detection outputs and detection class list
    * are provided as input to this function. Using these inputs it makes
@@ -150,4 +151,4 @@ public:
   }
 };
 
-#endif // _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_POST_PROCESS_HPP_
+#endif  // INCLUDE_POST_PROCESS_HPP_

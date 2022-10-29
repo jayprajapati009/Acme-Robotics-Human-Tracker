@@ -3,3 +3,4 @@ opencv/
 opencv_contrib/
 docs/html
 docs/latex
+.cache/

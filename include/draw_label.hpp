@@ -36,16 +36,16 @@
  *
  */
 
-#ifndef _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_DRAW_LABEL_HPP_
-#define _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_DRAW_LABEL_HPP_
+#ifndef INCLUDE_DRAW_LABEL_HPP_
+#define INCLUDE_DRAW_LABEL_HPP_
 
-#include <string>
 #include <algorithm>
+#include <string>
 #include <opencv2/opencv.hpp>
 
 /**
  * @brief Label design with layout, font formatting and positioning
- * 
+ *
  */
 class Draw_Label {
  public:
@@ -56,9 +56,10 @@ class Draw_Label {
   const int THICKNESS = 1;
 
   /**
-   * @brief Using input frame assigns label with class ID 
-   * 
-   * @param input_frame The video frame acquired from video camera stream as input
+   * @brief Using input frame assigns label with class ID
+   *
+   * @param input_frame The video frame acquired from video camera stream as
+   * input
    * @param bounding_box_label The label content as input
    * @param left left-most column of bounding box drawn over detections
    * @param top top-most row of bounding box drawn over detections
@@ -84,4 +85,4 @@ class Draw_Label {
   }
 };
 
-#endif  // _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_DRAW_LABEL_HPP_
+#endif  // INCLUDE_DRAW_LABEL_HPP_
