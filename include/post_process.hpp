@@ -140,7 +140,8 @@ public:
       rectangle(input_frame, cv::Point(left, top),
                 cv::Point(left + width, top + height), BLUE, 3 * THICKNESS);
 
-      std::string label = class_name[class_ids[idx]] + ":";
+      std::string label = cv::format("%.2f", confidences[idx]);
+      label = class_name[class_ids[idx]] + ":" + label;
 
       Draw_Label objl;
       objl.draw_label(input_frame, label, left, top);
