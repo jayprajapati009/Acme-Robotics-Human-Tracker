@@ -42,7 +42,7 @@ Detection output of running the detection model over live camera feed. [Video](h
 
 ### Dependencies
 
-Will be updated soon
+```sh requirements.sh```
 
 ###  Issues/Bugs
 
