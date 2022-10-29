@@ -1,0 +1,6 @@
+Done processing ./app/main.cpp
+Done processing ./include/draw_label.hpp
+Done processing ./include/post_process.hpp
+Done processing ./include/pre_process.hpp
+Done processing ./test/main.cpp
+Done processing ./test/test.cpp

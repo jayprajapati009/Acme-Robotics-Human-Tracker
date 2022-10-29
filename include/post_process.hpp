@@ -38,14 +38,15 @@
  *
  */
 
-#ifndef _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_POST_PROCESS_HPP_
-#define _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_POST_PROCESS_HPP_
+#ifndef INCLUDE_POST_PROCESS_HPP_
+#define INCLUDE_POST_PROCESS_HPP_
 
 #include <iostream>
-#include <opencv2/opencv.hpp>
 #include <ostream>
 #include <string>
 #include <vector>
+
+#include <opencv2/opencv.hpp>
 
 #include "./../include/draw_label.hpp"
 #include "./../include/pre_process.hpp"
@@ -56,14 +57,14 @@
  *
  */
 class Postprocess : public Preprocess, public Draw_Label {
-private:
+ private:
   const float SCORE_THRESHOLD = 0.5;
   const float NMS_THRESHOLD = 0.45;
   const float CONFIDENCE_THRESHOLD = 0.45;
   cv::Scalar BLUE = cv::Scalar(255, 178, 50);
   cv::Scalar RED = cv::Scalar(0, 0, 255);
 
-public:
+ public:
   /**
    * @brief The acquired video frame, detection outputs and detection class list
    * are provided as input to this function. Using these inputs it makes
@@ -88,7 +89,7 @@ public:
     float x_factor = input_frame.cols / INPUT_WIDTH;
     float y_factor = input_frame.rows / INPUT_HEIGHT;
 
-    float *data = (float *)preprocess_outputs[0].data;
+    float *data = reinterpret_cast<float *>(preprocess_outputs[0].data);
 
     const int rows = 25200;
 
@@ -128,7 +129,7 @@ public:
     std::vector<int> indices;
     cv::dnn::NMSBoxes(boxes, confidences, SCORE_THRESHOLD, NMS_THRESHOLD,
                       indices);
-    for (unsigned long int i = 0; i < indices.size(); i++) {
+    for (unsigned int i = 0; i < indices.size(); i++) {
       int idx = indices[i];
       cv::Rect box = boxes[idx];
 
@@ -140,7 +141,8 @@ public:
       rectangle(input_frame, cv::Point(left, top),
                 cv::Point(left + width, top + height), BLUE, 3 * THICKNESS);
 
-      std::string label = class_name[class_ids[idx]] + ":";
+      std::string label = cv::format("%.2f", confidences[idx]);
+      label = class_name[class_ids[idx]] + ":" + label;
 
       Draw_Label objl;
       objl.draw_label(input_frame, label, left, top);
@@ -149,4 +151,4 @@ public:
   }
 };
 
-#endif // _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_POST_PROCESS_HPP_
+#endif  // INCLUDE_POST_PROCESS_HPP_

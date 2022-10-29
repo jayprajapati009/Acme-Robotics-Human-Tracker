@@ -36,11 +36,12 @@
  *
  */
 
-#ifndef _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_PRE_PROCESS_HPP_
-#define _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_PRE_PROCESS_HPP_
+#ifndef INCLUDE_PRE_PROCESS_HPP_
+#define INCLUDE_PRE_PROCESS_HPP_
+
+#include <vector>
 
 #include <opencv2/opencv.hpp>
-#include <vector>
 
 /**
  * @brief Preprocess class defines the outline for preprocessing input frame
@@ -48,7 +49,7 @@
  *
  */
 class Preprocess {
-public:
+ public:
   const float INPUT_WIDTH = 640.0;
   const float INPUT_HEIGHT = 640.0;
 
@@ -78,4 +79,4 @@ public:
   }
 };
 
-#endif // _HOME_JP_VSCODES_ACME_ROBOTICS_HUMAN_TRACKER_INCLUDE_PRE_PROCESS_HPP_
+#endif  // INCLUDE_PRE_PROCESS_HPP_

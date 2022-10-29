@@ -37,6 +37,7 @@
  */
 
 #include <gtest/gtest.h>
+
 #include <iostream>
 #include <opencv2/core.hpp>
 #include <opencv2/opencv.hpp>
@@ -48,9 +49,7 @@
 cv::Mat img = cv::imread("./../resources/sample.jpg");
 cv::dnn::Net net = cv::dnn::readNet("./../app/resources/models/yolov5s.onnx");
 
-TEST(Test1, should_pass) {
-  EXPECT_EQ(1, 1);
-}
+TEST(Test1, should_pass) { EXPECT_EQ(1, 1); }
 
 TEST(Test2, testLabel) {
   std::string bounding_box_label = "Person:1";
