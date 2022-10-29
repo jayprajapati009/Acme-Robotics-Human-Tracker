@@ -37,7 +37,7 @@ The goal of human detection is to locate every individual in each video image wh
 
 ### Demo
 
-Will be updated soon
+Detection output of running the detection model over live camera feed. [Video](https://drive.google.com/file/d/1e1j4Rlp-jCm_DBXqBRSw_dl0_h2HiZUj/view?usp=sharing)
 
 ### Dependencies
 
