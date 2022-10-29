@@ -89,7 +89,7 @@ class Postprocess : public Preprocess, public Draw_Label {
     float x_factor = input_frame.cols / INPUT_WIDTH;
     float y_factor = input_frame.rows / INPUT_HEIGHT;
 
-    float *data = (float *)preprocess_outputs[0].data;
+    float *data = reinterpret_cast<float *>(preprocess_outputs[0].data);
 
     const int rows = 25200;
 
@@ -129,7 +129,7 @@ class Postprocess : public Preprocess, public Draw_Label {
     std::vector<int> indices;
     cv::dnn::NMSBoxes(boxes, confidences, SCORE_THRESHOLD, NMS_THRESHOLD,
                       indices);
-    for (unsigned long int i = 0; i < indices.size(); i++) {
+    for (unsigned int i = 0; i < indices.size(); i++) {
       int idx = indices[i];
       cv::Rect box = boxes[idx];
 

@@ -4,4 +4,3 @@ Done processing ./include/post_process.hpp
 Done processing ./include/pre_process.hpp
 Done processing ./test/main.cpp
 Done processing ./test/test.cpp
-Total errors found: 2
