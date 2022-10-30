@@ -34,16 +34,14 @@ The goal of human detection is to locate every individual in each video image wh
 - As Agile Iterative Process (AIP) is used for the project, the AIP sheet is attached [here](https://docs.google.com/spreadsheets/d/166YucrRE8L5IEZP3Tnl1fXNnf7gSWNF5CJ9GKwdEBdU/edit?usp=sharing)
 - The scrum meeting list and  is attached [here](https://docs.google.com/spreadsheets/d/166YucrRE8L5IEZP3Tnl1fXNnf7gSWNF5CJ9GKwdEBdU/edit?usp=sharing)
 - The video for phase-1 submission can be found [here]()
-- The video for phase-2 submission can be found [here](https://drive.google.com/file/d/12cgUsRPDV0qPgJLdeUOlEKvAOviuRfWN/view?usp=sharing)
 
 ### Demo
 
-Detection output of running the detection model over live camera feed. [Video](https://drive.google.com/file/d/1e1j4Rlp-jCm_DBXqBRSw_dl0_h2HiZUj/view?usp=sharing)
-![alt text](./docs//screen-record.gif?raw=true "Human Detector Result on live feed")
+Will be updated soon
 
 ### Dependencies
 
-```sh requirements.sh```
+Will be updated soon
 
 ###  Issues/Bugs
 
