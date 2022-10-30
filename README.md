@@ -1,4 +1,5 @@
 
+
 # Acme Robotics Human Tracker Module
 
 [![Build Status](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/actions/workflows/build_and_coveralls.yml/badge.svg)](https://github.com/ayprajapati009/Acme-Robotics-Human-Tracker/actions/workflows/build_and_coveralls.yml)
@@ -15,37 +16,48 @@
 
 1. [Introduction](#introduction)
 2. [Project Proposal Documentation](#project-proposal)
-3. [Project Planning Documentation](#project-planning)
+3. [Project Implementation Documentation](#project-implementation)
+4. [Demo](#demo)
+5. [Dependencies](#dependencies)
+6. [Build Instruction](#build-instructions)
+7. [Doxygen Documentation](#generate-the-doxygen-documentation)
+8. [Cpplint and Cppcheck](#cpplint-and-cppcheck)
+9. [References](#references)
 
 ## Introduction
 
 The goal of human detection is to locate every individual in each video image while making the fewest number of false positives. Because it could be used for military, safety, security, and entertainment purposes, the problem of detecting, localizing, and tracking human presence has received a lot of attention. Finding the locations of all instances of humans present in an image is the goal of human detection, which we will complete by examining every area of the image and locating humans in relation to the robotic frame.
   
 ### Project proposal
+|Deliverable|Link|
+|---|---|
+|Project Proposal Document|[here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/blob/main/proposal_documents/Acme%20Robotics%20Human%20Detector.pdf)|
+|Quad Chart|[here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/blob/main/proposal_documents/QuadChart.pdf)|
+|UML Activity Diagram|[here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/blob/main/proposal_documents/ENPM808X_ACME_Flowchart.pdf)|
+|UML Sequence Diagram is attached|[here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/blob/main/proposal_documents/ENPM808X_Proposal_ACME.pdf)|  
+|Proposal Video|[here](https://drive.google.com/file/d/1kOzdRt9SPMXR_AmSA19PgOaBzf2L9vJt/view?usp=share_link)|
 
-- The Project Proposal Document is attached [here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/blob/main/proposal_documents/Acme%20Robotics%20Human%20Detector.pdf).  
-- The Quad Chart is attached [here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/blob/main/proposal_documents/QuadChart.pdf).  
-- The UML Activity Diagram is attached [here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/blob/main/proposal_documents/ENPM808X_ACME_Flowchart.pdf).  
-- The UML Sequence Diagram is attached [here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/blob/main/proposal_documents/ENPM808X_Proposal_ACME.pdf).  
-- The video for the proposal is attached [here](https://drive.google.com/file/d/1kOzdRt9SPMXR_AmSA19PgOaBzf2L9vJt/view?usp=sharing).
+### Project Implementation
+|Deliverable|Link|
+|---|---|
+|AIP sheet is attached|[here](https://docs.google.com/spreadsheets/d/166YucrRE8L5IEZP3Tnl1fXNnf7gSWNF5CJ9GKwdEBdU/edit?usp=sharing)|
+|Sprint and Review Meeting Notes|[here](https://docs.google.com/document/d/1MRIKLqFYe-GjEmR_fL_krQcXT3Q6iq5koS9r7n5rJDE/edit?usp=sharing)|
+|Phase-1 Video|[here](https://drive.google.com/file/d/15CELuPP5a5_Knek-NCUMgxb0wNsRb76w/view?usp=share_link)|
+|Phase-2 Video|[here](https://drive.google.com/file/d/1XU1qVc-Vq--zFrXQqLE9aakxbYuPS_j6/view?usp=share_link)|
+|Updated UML Diagram (Class Diagram)|[here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/tree/main/UML_diagrams/final_uml)|
 
-### Project Planning
-
-- As Agile Iterative Process (AIP) is used for the project, the AIP sheet is attached [here](https://docs.google.com/spreadsheets/d/166YucrRE8L5IEZP3Tnl1fXNnf7gSWNF5CJ9GKwdEBdU/edit?usp=sharing)
-- The scrum meeting list and  is attached [here](https://docs.google.com/spreadsheets/d/166YucrRE8L5IEZP3Tnl1fXNnf7gSWNF5CJ9GKwdEBdU/edit?usp=sharing)
-- The video for phase-1 submission can be found [here]()
 
 ### Demo
 
-Will be updated soon
+Detection output of running the detection model over live camera feed. [Video](https://drive.google.com/file/d/1e1j4Rlp-jCm_DBXqBRSw_dl0_h2HiZUj/view?usp=sharing)
+![alt text](./docs//screen-record.gif?raw=true "Human Detector Result on live feed")
 
 ### Dependencies
 
-Will be updated soon
-
-###  Issues/Bugs
-
-So far not issues/bugs detected.
+To install all the required dependencies, run the following command in the cloned  directoy,
+```sh
+sh cppcheck_and_cpplint.sh
+```
 
 ### Build Instrutions
 
@@ -68,7 +80,7 @@ Run the tests,
 ```sh
 ./test/human-tracker-test
 ```
-Try out the PID Controller,
+Try out the Human Tracking,
 ```sh
 ./app/human-tracker
 ```
@@ -92,7 +104,9 @@ google-chrome index.html
 
 ### Cpplint and Cppcheck
 
-The results are stored in /results/cpplint/ and /results/cppcheck/ directories.
+```sh
+sh requirements.sh
+```
 
 ### References 
 
