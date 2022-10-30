@@ -41,7 +41,7 @@ The goal of human detection is to locate every individual in each video image wh
 |Deliverable|Link|
 |---|---|
 |AIP sheet is attached|[here](https://docs.google.com/spreadsheets/d/166YucrRE8L5IEZP3Tnl1fXNnf7gSWNF5CJ9GKwdEBdU/edit?usp=sharing)|
-|Sprint and Review Meeting Notes|[here](https://docs.google.com/spreadsheets/d/166YucrRE8L5IEZP3Tnl1fXNnf7gSWNF5CJ9GKwdEBdU/edit?usp=sharing)|
+|Sprint and Review Meeting Notes|[here](https://docs.google.com/document/d/1MRIKLqFYe-GjEmR_fL_krQcXT3Q6iq5koS9r7n5rJDE/edit?usp=sharing)|
 |Phase-1 Video|[here](https://drive.google.com/file/d/15CELuPP5a5_Knek-NCUMgxb0wNsRb76w/view?usp=share_link)|
 |Phase-2 Video|[here](https://drive.google.com/file/d/1XU1qVc-Vq--zFrXQqLE9aakxbYuPS_j6/view?usp=share_link)|
 |Updated UML Diagram (Class Diagram)|[here](https://github.com/jayprajapati009/Acme-Robotics-Human-Tracker/tree/main/UML_diagrams/final_uml)|
